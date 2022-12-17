@@ -5,6 +5,10 @@ name = "pypi"
 
 [packages]
 Django = "~=4.1.4"
+requests = "*"
+pydantic = "*"
+exchange-rates = "*"
+aino-convert = "*"
 
 [dev-packages]
 black = "~=22.12.0"
