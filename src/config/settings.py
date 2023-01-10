@@ -10,15 +10,21 @@ DEBUG = getenv("DJANGO_DEBUG", default=False)
 ALLOWED_HOSTS = getenv("DJANGO_ALLOWED_HOSTS", default="").split(",")
 
 
-INSTALLED_APPS = [
+DJANGO_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "exchange_rates",
 ]
+
+LOCAL_APPS = [
+    "exchange_rates",
+    "users.apps.UsersConfig",
+]
+INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS
+
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -85,6 +91,10 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = "static/"
+
+
+# Set custom user model
+AUTH_USER_MODEL = "users.User"
 
 
 # Exchange rates service (Alpha Vantage)
