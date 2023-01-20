@@ -9,7 +9,6 @@ SECRET_KEY = getenv("DJANGO_SECRET_KEY", default="INVALID")
 DEBUG = getenv("DJANGO_DEBUG", default=False)
 ALLOWED_HOSTS = getenv("DJANGO_ALLOWED_HOSTS", default="").split(",")
 
-
 DJANGO_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",

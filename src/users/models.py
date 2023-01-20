@@ -37,22 +37,3 @@ class User(AbstractBaseUser, PermissionsMixin):
         if self.first_name and self.last_name:
             return f"{self.first_name} {self.last_name}"
         return self.email
-
-
-# class Order(models.Model):
-#     time_create = models.DateTimeField(auto_now_add=True)
-#     client = models.ForeignKey('User', on_delete=models.PROTECT)
-#     service = models.ForeignKey('Price', on_delete=models.PROTECT)
-#     comments = models.CharField(max_length=250, blank=True)
-#     manager_name = models.ForeignKey('Manager_list', on_delete=models.PROTECT)
-#     if_completed = models.BooleanField(default=True)
-#
-#
-# class Price(models.Model):
-#     service = models.CharField(max_length=250, blank=True)
-#     cost = models.IntegerField(default="0", blank=True)
-#
-#
-# class Manager_list(models.Model):
-#     first_name = models.CharField(max_length=150, blank=True)
-#     last_name = models.CharField(max_length=150, blank=True)
