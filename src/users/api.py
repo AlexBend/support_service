@@ -12,9 +12,6 @@ from users.serializers import (
     UserSerializer,
 )
 
-# from django.contrib.auth import get_user_model
-# User = get_user_model()
-
 
 class UserAPISet(ModelViewSet):
     queryset = User.objects.all()
@@ -80,51 +77,3 @@ class UserAPISet(ModelViewSet):
         instance.delete()
 
         return JsonResponse({}, status=status.HTTP_204_NO_CONTENT)
-
-
-# User = get_user_model()
-
-
-# class UserCreateAPI(CreateAPIView):
-#     serializer_class = UserRegistrationSerializer
-#     permission_classes = [AllowAny]
-
-# from tickets.serializers import (
-#     TicketSerializer,
-#     TicketLightSerializer,
-# )
-# from django.http import JsonResponse
-# from tickets.models import Ticket
-# from rest_framework.viewsets import ViewSet
-# from rest_framework import status
-# from shared.serializers import ResponseSerializer, ResponseMultiSerializer
-#
-#
-# class UserAPISet(ViewSet):
-#     def list(self, request):
-#         queryset = Ticket.objects.all()
-#         serializer = TicketLightSerializer(queryset, many=True)
-#         response = ResponseMultiSerializer({"results": serializer.data})
-#         return JsonResponse(response.data)
-#
-#     def retrieve(self, request, id_: int):
-#         instance = Ticket.objects.get(id=id_)
-#         serializer = TicketSerializer(instance)
-#         response = ResponseSerializer({"result": serializer.data})
-#         return JsonResponse(response.data)
-#
-#     def create(self, request):
-#         context: dict = {
-#             "request": self.request,
-#         }
-#         serializer = TicketSerializer(data=request.data, context=context)
-#         serializer.is_valid(raise_exception=True)
-#         serializer.save()
-#         response = ResponseSerializer({"result": serializer.data})
-#
-#         return JsonResponse(response.data, status=status.HTTP_201_CREATED)
-#
-#
-# ticket_create = TicketAPISet.as_view({"post": "create"})
-# tickets_list = TicketAPISet.as_view({"get": "list"})
-# ticket_retrieve = TicketAPISet.as_view({"get": "retrieve"})
