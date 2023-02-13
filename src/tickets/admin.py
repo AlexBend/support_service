@@ -1,4 +1,5 @@
 from django.contrib import admin
+
 from shared.django import TimeStampReadonlyAdmin
 from tickets.models import Ticket
 

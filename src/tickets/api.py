@@ -2,6 +2,7 @@ from django.http import JsonResponse
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
+
 from shared.serializers import ResponseMultiSerializer, ResponseSerializer
 from tickets.models import Ticket
 from tickets.permissions import (

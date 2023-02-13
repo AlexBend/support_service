@@ -1,5 +1,6 @@
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth.models import UserManager as _UserManager
+
 from users.constants.roles import Role
 
 
