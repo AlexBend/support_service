@@ -7,15 +7,16 @@ name = "pypi"
 Django = "~=4.1.4"
 requests = "*"
 pydantic = "*"
-exchange-rates = "*"
-aino-convert = "*"
 djangorestframework = "~=3.14.0"
 djangorestframework-simplejwt = "==5.2.2"
 
 [dev-packages]
-black = "~=22.12.0"
+black = "~=22.10.0"
 flake8 = "~=6.0.0"
-isort  = "~=5.10.1"
+isort = "~=5.10.1"
+mypy = "~=0.991"
+django-stubs = "~=1.14.0"
+djangorestframework-stubs = "~=1.8.0"
 
 [requires]
 python_version = "3.10"

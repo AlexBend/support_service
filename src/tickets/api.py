@@ -42,8 +42,10 @@ class TicketAPISet(ModelViewSet):
     def list(self, request):
         if request.user.role == Role.ADMIN:
             queryset = self.get_queryset()
-        else:
+        elif request.user.role == Role.MANAGER:
             queryset = Ticket.objects.filter(manager=request.user)
+        else:
+            queryset = Ticket.objects.filter(customer=request.user)
 
         serializer = TicketLightSerializer(queryset, many=True)
         response = ResponseMultiSerializer({"results": serializer.data})
