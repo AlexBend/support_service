@@ -38,21 +38,21 @@ class UserAPISet(ModelViewSet):
 
         return [permission() for permission in permission_classes]
 
-    def list(self, request):
+    def list(self, request, *args, **kwargs):
         queryset = self.get_queryset()
         serializer = UserLightSerializer(queryset, many=True)
         response = ResponseMultiSerializer({"results": serializer.data})
 
         return Response(response.data)
 
-    def retrieve(self, request, pk: int):
+    def retrieve(self, request, *args, **kwargs):
         instance = self.get_object()
         serializer = UserLightSerializer(instance)
         response = ResponseSerializer({"result": serializer.data})
 
         return JsonResponse(response.data)
 
-    def create(self, request):
+    def create(self, request, *args, **kwargs):
         context: dict = {"request": self.request}
         serializer = UserRegistrationSerializer(data=request.data, context=context)
         serializer.is_valid(raise_exception=True)
@@ -61,7 +61,7 @@ class UserAPISet(ModelViewSet):
 
         return JsonResponse(response.data, status=status.HTTP_201_CREATED)
 
-    def update(self, request, pk: int):
+    def update(self, request, *args, **kwargs):
         instance: User = self.get_object()
 
         context: dict = {"request": self.request}
@@ -73,7 +73,7 @@ class UserAPISet(ModelViewSet):
 
         return JsonResponse(response.data)
 
-    def destroy(self, request, pk: int):
+    def destroy(self, request, *args, **kwargs):
         instance: User = self.get_object()
         instance.delete()
 
