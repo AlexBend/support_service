@@ -53,7 +53,7 @@ class TicketAPISet(ModelViewSet):
 
         return Response(response.data)
 
-    def retrieve(self, request,  *args, **kwargs):
+    def retrieve(self, request, *args, **kwargs):
         instance = self.get_object()
         serializer = TicketSerializer(instance)
         response = ResponseSerializer({"result": serializer.data})
