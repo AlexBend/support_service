@@ -28,6 +28,42 @@ pipenv shell
 ...
 
 
+## Run using Docker Compose
+```bash
+docker-compose up -d
+```
+
+
+### Usefull commands
+```bash
+# Build images
+docker-compose build
+
+# Stop containers
+docker-compose down
+
+# Restart containers
+docker-compose restart
+
+# Check containers status
+docker-compose ps
+
+
+## Logs
+
+# get all logs
+docker-compose logs
+
+# get specific logs
+docker-compose logs app
+
+# get limited logs
+docker-compose logs --tail 10 app
+
+# get flowed logs
+docker-compose logs -f app
+```
+
 ## Application description
 ```bash
 ▾ users
@@ -36,7 +72,7 @@ pipenv shell
     ├─ views.py # Endopints / post-controller
     ├─ models.py # Database tables mapper
     ├─ admin.py # Database tables mapper
-    # └─ views.py # Endopints / post-controller
+    └─ views.py # Endopints / post-controller
 ```
 
 

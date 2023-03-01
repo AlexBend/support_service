@@ -9,6 +9,7 @@ requests = "*"
 pydantic = "*"
 djangorestframework = "~=3.14.0"
 djangorestframework-simplejwt = "==5.2.2"
+psycopg2-binary = "*"
 
 [dev-packages]
 black = "~=22.10.0"
