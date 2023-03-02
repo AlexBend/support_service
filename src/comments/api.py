@@ -23,12 +23,6 @@ class CommentsListAPI(ListAPIView):
     lookup_url_kwarg = "ticket_id"
 
     def __get_tickets(self):
-        # The OR SQL processing
-        # from django.db.models import Q
-        # tickets = Ticket.objects.filter(
-        #     Q(manager=self.request.user) | Q(customer=self.request.user)
-        # )
-
         role: Role = self.request.user.role
 
         if role == Role.ADMIN:
