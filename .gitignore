@@ -3,7 +3,8 @@
 .env
 .env.default
 
-*.sqlite3
+# Staticfiles
+staticfiles/
 
 __pycache__/
 

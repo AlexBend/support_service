@@ -23,6 +23,11 @@ pipenv sync --dev
 pipenv shell
 ```
 
+### Development
+
+```bash
+python src/manage.py collectstatic
+```
 
 ## Code quality tools
 ...

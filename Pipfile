@@ -10,6 +10,8 @@ pydantic = "*"
 djangorestframework = "~=3.14.0"
 djangorestframework-simplejwt = "==5.2.2"
 psycopg2-binary = "*"
+gunicorn = "==20.1.0"
+#waitress = "*"
 
 [dev-packages]
 black = "~=22.10.0"

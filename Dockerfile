@@ -4,6 +4,8 @@
 
 FROM --platform=linux/x86_64 python:3.10-slim
 
+ARG PIPENV_EXTRA_ARGS
+
 # Environment variables
 ENV PYTHONUNBUFFERED=1
 
@@ -20,7 +22,7 @@ RUN apt-get update \
 RUN pip install --upgrade pip pipenv setuptools
 
 COPY Pipfile Pipfile.lock ./
-RUN pipenv sync --system --dev
+RUN pipenv sync --system ${PIPENV_EXTRA_ARGS}
 
 # Copy project stuff
 COPY ./ ./
